@@ -1,0 +1,33 @@
+R Notes Feb. 7, 2017
+https://eeob-biodata.github.io/R-Data-Skills/
+https://github.com/EEOB-BioData/R-Data-Skills/tree/gh-pages/_episodes_rmd
+command enter #line in the script will be executed in the console
+#variables cannot start with a digit
+option - #allows the quick insertion of <-
+ls () #tells you what variables are stored to the environment
+ls #just gives you the code for the function ls
+rm variable #removes the variable 'variable'
+rm(list = ls()) #removes all variables 
+ls(all.names=TRUE) #lists all variables including hidden variables
+?function #pulls up the help page for the function 'function'
+library(package) #loads the package into the R environment
+install.packages("package") #installs a package
+echo "graphs/" >> .gitignore #forces git to ignore any updates to graphs, and keeps it from sending graphs to github
+
+
+Feb. 9, 2017
+
+#R Notebook allows an executable lab notebook file
+#also can do an R Markdown file
+??function # allows a search of the r database.
+typeof(function) #check what type of vector the data is
+#vectors are always flat, can combine vectors without parentheses, no nested structures
+#missing values indicated by NA
+#quotation marks will prevent R from reading as a variable, numbers are not variables
+#The coercion rules go: logical -> integer -> double -> complex -> character, where -> can be read as are transformed into. You can try to force coercion against this flow using the as. functions
+#variables must be the same type to be combined.
+str(x) #tells you everything in your list vector
+list(list(list)) #you can have lists within lists using this command, c(list) will just give you an unnested vector
+#objects have attributes that describe them
+names(x) #character vector names are listed
+#A factor is a vector that can contain only predefined values, and is used to store categorical data, can change characters into integers

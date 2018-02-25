@@ -1,0 +1,24 @@
+Notes Jan. 31
+less #can search for strings of characters
+/characters #with less command, searches for the character string
+less #can also be used to check components of a pipe
+wc #word count, has line count, word count, and character count
+wc -l #just prints number of lines
+ls -lh #gives file details including file size, last modification, file name
+du -h #human readable file for the disk usage (file size) of a file
+awk #program that can be useful for counting the number of columns
+awk -F "\t" '{print NF; exit}' Mus_musculus.GRCm38.75_chr1.bed #indicate within awk, using -F option, we are looking for a tab ("\t"), tell it what you want it to do, print number of fields and then exit
+#use tail to omit headers, be careful to know which delimiters are being used in the file
+grep -v "^#" Mus_musculus.GRCm38.75_chr1.gtf | awk -F "\t" '{print NF; exit}' #-v is option to choose stuff without that #
+cut #assumes tab delimited, can extract certain parts of the data to run for analysis
+cut -f 2 Mus_musculus.GRCm38.75_chr1.bed | head -n 3 #-f is that we want a certain column, 2, pipe to head
+grep -v "^#" Mus_musculus.GRCm38.75_chr1.gtf | cut -f 1-8 | column -t \ | head -n 3 #can use the column program to neaten the columns up, -t creates a table format, don't want to send this to a text file or a program, because column adds spaces!
+##grep is one of the fastest search programs
+#grep requires a pattern to search for and a file, CAN RETURN PARTIAL MATCHES!!
+grep -w #matches exact entire words
+grep -B #matches context of string before the string is found (can specify number of lines before, -A is after)
+grep "Olfr141[13]" Mus_musculus.GRCm38.75_chr1_genes.txt #searches for 1 or 3, this is a basic regular expression
+grep -E "(Olfr218|Olfr1416)" Mus_musculus.GRCm38.75_chr1_genes.txt #extended regular expression uses pipe to match both search patterns
+grep -c #gives a count in addition to pulling out matching lines
+grep -o #just extract word matches not the entire line
+

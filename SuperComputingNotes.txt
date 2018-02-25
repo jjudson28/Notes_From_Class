@@ -1,0 +1,63 @@
+Levi Baber
+High Performance Computing
+
+need to worry about all these things, the closer to the CPU the faster the analysis
+need to worry about CPU - processing unit
+memory - RAM, where your data can sit
+network - connections between computer
+disk I/O
+
+Performance monitoring - htop (top), iostat (shows you the disk), iftop (shows you the network interface, big deal on a cluster)
+
+load average is the amount of the computer used at each time, when load = number of cores, the computer is full
+
+be conscious of what other people are using as far as cores, check the S column -R is running, D is waiting on disk
+
+head node is the processor that is in charge, which then farms it out to different nodes
+data transfer node is just for transferring data
+processor is a cpu chip
+
+L2 cache fastest and closest
+L3 cache is slower and close, memory comes after
+try not to use SWAP, which is an overflow for RAM, slows things down
+disk is your hard-drive
+
+Clusters:
+hpc-class: for classes, not research, has 48 nodes, can be slower than a laptop if you don't spread across cores
+condo2017: main research core cluster, 180 nodes, 2.6 Gh each core, added free-tier (which are free, good familiarization tool) nodes that are similar to hpc-class
+don't use cystorm or lightning3
+
+Custom Hardware (may not scale well across computers):
+BioCrunch - multithreaded but need shared memory for high communication, lots of RAM, 80 threads
+BigRAM - denovo assembly, the most RAM
+Speedy - fast, 24 threads, lower RAM, for stuff that can't spread out across computers
+Speedy2 - same as above
+LASWIN01 - Windows only software
+Legion - for massively parallel applications, 4 nodes with 272 threads each, 386GB of RAM
+
+Xcede - national supercomputer centers to scale larger than campus resources, Jim Coyle and Andrew Severin are contacts on campus
+Cloud - running on someone else's computer, have good intro rates, be careful, consult IT before purchasing to get discounts
+
+Fedora - good option to become familiar with linux, similar to Ubuntu
+Servers are all in linux environment
+
+Modules - allow people to share the same software, library called RISA **must check out the software before you use it**
+module load abyss #loads the program abyss from the RISA library
+git.linux.iastate: private git server on campus
+
+DON'T STORE STUFF ON THE CLUSTER/SERVERS, MAKE BACKUPS, USE NETWORK STORAGE
+
+my.files, cybox, github are good places to store data to be redundant
+
+JOB SCHEDULER - SLURM, assign jobs to compute nodes, you have to tell it how much you are going to use, 
+try not to overestimate, script writer is something to get you started, scheduler is only for clusters like condo, not standalone machines
+
+Common problems:
+* over- or underusing resource
+* not taking advantage of the correct machine for the problem
+* moving data through slow links
+* trying to scale up programs that weren't designed for large datasets
+
+Research IT, http://rit.las.iastate.edu
+email: researchit@iastate.edu
+hpc-help@iastate.edu

@@ -1,0 +1,40 @@
+Notes April 18
+
+Pipelines!
+Make sure your script isn't fragile
+make sure your pipeline is robust and reproducible
+
+**Basic Bash Scripting**
+Bash is a general scripting language for streaming diff commands together
+Bash script is
+* a series of commands organized into a rerunnable script with built in error checks
+* always have extension .sh and can create these scripts is a text editor
+* need a header for the bash script, the shebang, sets a path to the interpreter
+-e #prevents the shell script from continuing if there is an error in the script
+-o pipefail #if there is error within your pipe, will throw an error and exit the script
+
+**Running Bash Script**
+* run it directly
+bash script.sh
+* call the script as a program, in cases where your flavor of bash won't run it, need executable conditions
+./script.sh
+*To change permissions to run as a program
+chmod u+x script.sh
+
+#call $0 is always the name of the file
+#arguments are called according to the command line, can change the order
+exit 1 #forces exit status of 1
+echo $? #prints error status of previous command
+
+bash genefind.sh gene2 genes #call the script genefind, grep for gene2 in the file genes
+
+to run across many files
+1. select which files to apply the commands
+2. Loop over the data and apply commands
+3. keep track of the names of any output files created
+
+find can be used in a Bash script to match particular files and then xargs can be used to pass these files on to particular commands
+
+delineate number of processors to use using xargs -P tag, can go to different processers at once
+
+gnu parallel in Buffalo book

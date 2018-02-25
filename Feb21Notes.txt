@@ -1,0 +1,4 @@
+Notes Feb. 21
+
+d$GC.binned <- cut(d$percent.GC, 5) #cut data into 5 different categories
+head(d$GC.binned)

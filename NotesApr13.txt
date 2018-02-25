@@ -1,0 +1,30 @@
+High Performance Computing- Usha
+ssh -X jjudson@hpc-class.its.iastate.edu #log on to hpc-class
+#use your net-id password
+module avail
+module load program #insert program name into "program"
+module purge #gets rid of all your loaded programs
+module use [path to directory] #you can set up a module directory somewhere specific on your computer, can find a specific college directory, may not be very useful now that the modules are all available
+
+#put all information you need in a simple text file
+#get job id for project, can delete jobs if you made a mistake,
+squeue -u userid #list jobs for userid
+
+code is provided online at hpc
+
+what about r packages? can do in your directory, just can't change the modules available without request
+
+clear #clears the terminal
+scp source destination #secure copy from one computer to another from the source to the destination
+/ptmp #temporary storage with large space
+
+scp surveys.csv jjudson@hpc-class.its.iastate.edu:/home/jjudson
+
+high performance computing page for each cluster on ISU website, use myfiles to transfer your files, can fill our text script
+can add aliases to move files easily between places
+
+sbatch file.sub #submits the job with the file that has all the details on runtime, ect (.sub file)
+
+ln -s path_to_file #create softlink, appears in blue
+
+#always make sure you are redirecting and not running it on the head node, use the SLURM files

@@ -1,0 +1,32 @@
+Notes March 28
+
+Latex!
+it's free!
+really flexible
+automation of many tasks including bibliographies and cross referencing
+document format changes can be done with just one line of code
+based on portable files (plain text) sharing is easy, can do via github, ect and can use diff tools in github
+easy rendering of math equations and graphics
+online editors exist, you can make modular files that compile into a single pdf
+you can comment out sentences or paragraphs based on conditional statements
+Disadvantages: substantial learning curve, it is challenging to collaborate with those
+who don't use it. error messages are cryptic, can take some effort to figure things out,
+if your file is really large like a presentation it can take a minute to render as pdf
+
+What you see is what you get programs, like Word:
+	good tools, easy gui interface
+	almost everyone is knowledgeable on these programs
+Disadvantages include cost, formatting can be challenging, terrible for equations, files
+can be difficult to manage using version control, bibliography stuff can be tough,
+default autoformatting, often cannot take formats from old versions of word, new ect.
+
+overleaf or sharelatex
+texpad for mac
+JabRef #work with bibliography to get bibTex format
+
+March 20 Notes
+
+data management plans are important!
+see this weeks github folder for the ppt
+http://arxiv
+see R code for March 30

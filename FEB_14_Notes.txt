@@ -1,0 +1,28 @@
+Notes for February 14
+can use specific names to call an item in a vector, can use logical, can use ranges
+data frames are 2 dimensional structures
+lists can have heterogeneous structures
+cats[1] gives a list
+cats[[1]] gives a vector
+you can subset a dataframe to remove columns you don't want
+rows are lists rather than vectors
+
+Notes for Feb. 16th
+for homework, use the R notebook in R to take notes on your assignment, save the file as an R notebook
+each column must be consistent in data type, but diff columns can have diff. vector types (character/integer)
+data frames are heterogeneous
+cats[row:column]
+cats[c(1,3)] #gives you column 1 and column 3
+cats[1,3] #gives you data from row 1, column 3 (single data point)
+write.csv(cats, file = "data/new_cats.csv") #saves the dataframe back to a file
+str(d) #gives structure of d
+dim(d) #gives number of rows and columns
+#can use drop command to return a dataframe
+table(d$cent) #allows summary of column in a table format
+#can use the history in Rstudio to transfer commands to a file
+d[d$total.SNPs >= 85, ] #can pull out the observations that fit the criteria and are TRUE
+summary(d$Pi[d$cent]) #pulls out summary statistics for Pi when centromeric region is TRUE
+summary(d$Pi[d$cent == TRUE]) #equivalent to above command
+which(d$Pi > 3) #gives row numbers for where the command is TRUE
+download.file #to download zipped files
+read.delim #reads in tab delimited files

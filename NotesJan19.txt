@@ -1,0 +1,8 @@
+git config #allows you to add identity and email to git
+git config --global user.name "JJudson" #allows you to add a username, replace with user.email to assign the email
+git push #will push changes to the repository, always pull before you push
+git init #does initializing of git repository without readme file
+
+#Commit often!! And leave good commit messages!
+.gitignore #can ignore unnecessary files using .gitignore
+<<<<<HEAD #demonstrates a conflict in the file that will have to be changed

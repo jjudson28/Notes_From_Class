@@ -1,0 +1,20 @@
+February 2 Notes
+file #tells you what kind of file it is, what characters you have
+bioawk #has bio tools, such as getting the reverse complement of a sequence
+hexdump #will tell you where things have gone wrong with the character type
+sort #to find unique lines, must have sorted data, need to have sorted data to run certain programs
+sort #functions alphanumerically, tries to sort first column first, then second column ect.
+sort -k1,1 -k2,2n example.bed #allows numeric sorting, k1 is column 1, 1 is alphanumeric, 2n is numeric sort of second column
+sort -k1,1 -k2,2n -r example.bed #sorts in reverse order
+gsort #needs to be downloaded, see slack
+sort -S #can specify the amount of memory you want to use in sorting a file, can allocate more or less memory.
+gsort --parallel 4 #using 4 cores to sort
+uniq #finds unique values in a file
+###BEFORE YOU USE UNIQ, MUST SORT THE FILE!
+sort letters.txt | uniq -c #counts the duplicates of each unique value
+##in order to join files must first sort both of the files
+join -1 1 -2 1 example_sorted.bed example_lengths.txt > example_with_lengths.txt #will join according to the order you give it
+#record is a line, field is a word, $0 is the entire line, $1 is the column 1, awk functions in pattern action pairs
+awk '{ print $0 }' example.bed #print entire line, keep going, works like cat
+awk '{ print $2 "\t" $3 }' example.bed #print only second and third field with a tab inbetween
+awk '$1 ~ /chr1/ && $3 - $2 > 10' example.bed #$1 is the first column, match the /chr1/ pattern AND ones where the length of the seq. greater than 10

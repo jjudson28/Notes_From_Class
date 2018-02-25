@@ -1,0 +1,11 @@
+Notes Adena Howe March 23, 2017
+Amazon elastic cloud computing
+chmod og-rwx eeob.pem #change permissions to access secure file
+ssh -i eeob.pem ubuntu@54.242.50.44 #access computer remotely using ubuntu
+STEPS:
+GRAB a database
+WRANGLE put the data in a format you can use
+PARSE analyze the data
+
+screen #allows you to save so that your process running in the other computer is saved
+blastn -query metags/corn.fa -db all-nifH.fa -out corn.x.all.blastnout -outfmt 6

@@ -1,0 +1,82 @@
+pwd 	#print working directory
+cd 	#change directory
+		
+	#we are going to use git
+git 	#command
+git clone https://github.com/EEOB-BioData/BCB546X-Spring2016 #this creates a file on the desktop with the information from github
+
+ls 		#list all files in directory, ect.
+		#reproducible and robust! effective use of whitespace for commenting, align comments together and split from code interpreted by computer
+		#can start each portion of line with header comment that is searchable
+		#use existing scripts like biopython that are publicly available because they get tested more
+		#unix handles data streams, instead of copying and pasting, requires much less memory
+cat 		#concatenates files together or puts files into new file
+
+#standard out versus standard error
+cat file1 file2					#will just print everything to terminal, send it somewhere, the order of the files matters
+cat file1 file2 > data.txt			#will send the standard out to data.txt
+cat file3 >> data.txt				#will append the file3 data into the data.txt file
+mkdir data						#make a new directory in your current directory
+touch data.txt					#make a file rather than a directory
+ctrl c							#kill a process
+cat file1 file2 2> error.txt			#add the 2 to send the standard error to the file specified. the error now goes to this file
+cat file1 file2 2> error.txt > data.txt	#sends standard output to data.txt and standard error to error.txt
+cat file1 file2 | wc				#pipes file1 and file2 to a program called wc
+
+ls -a		#lists everything in current directory
+ls -l		#tells you which are files and which are directories
+open filename	#opens the file in a text editor, can edit and save files which saves changes
+cat filename	#tells you what is in the file
+cd			#without filename designation, this takes you back to the previous directory
+cd -		#takes you to last used directory you were working in
+cd ..		#takes you to intermediate directory
+
+#Remote Machines, not locally available, can control the computer without being there, high performance computer clusters.
+#SSH: Secure Shell, provides a secure encrypted channel over the network for users to access remote machines
+#can use your unix shell to log in to the secure shell for a machine (ex: speedy), can only log on on-campus for isu clusters, code is on notes of tracy's
+#get put in home directory of your id through the machine
+top		#shows you what's running on the machine
+htop	#shows you each processor
+q		#quit
+~		#shortcut to home directory
+		#can write a config file to shortcut commands like going to a specific server
+		
+#SSH keys are more secure, can log in without typing password. Generate a public key and a private key, when you connect the comps. read the keys for access
+#generating ssh keys is important for GitHub
+#generate the key in my home directory
+cd ~
+ssh-keygen -t rsa		#make a key, hit enter to save in automatically generated directory, can create a passphrase optionally
+tab key					#autocomplete command
+
+#Need to save revisions, understand versioning of documents (ex: Dropbox)
+#version control commonly uses Git
+#can track changes to every file, can revert back to previous version, review changes over time. don't overwrite or corrupt files
+#can have multiple independent branches of the same repository
+#Git manages a filesystem as a set of snapshots, keeps track of all changes and merges them all together into new document
+#almost all of Git happens locally
+#remote host adds to repository by allowing collaboration and backup
+#remote hosts are great for backup, web-based Git host-> GitHub, unlimited free public repositories, pay for private
+#Bitbucket offers free public and private repositories, register with student account to get unlimited collaborators
+#GitLab has both free public and private repositories, allows bigger repositories
+
+#Limitations to Git
+	#repository size; the larger the repository the slower the work, network speed is a limitation, try to limit to 1Gb.
+	#file size; if a file is really large, it can be a problem, won't let you push it. 
+	#works really well for text files, diff commmand only works with text files.
+	
+#Demo: Clone a Repository, ipyrad
+git status		#shows what you have modified from the original file
+git log			#records all changes, to escape press q
+git diff		#for text files, shows what you have changed in the file, can work between commits, can look at the commit key and check what is different
+git checkout filename	#restores file to the last time the repository was updated
+git branch				#tells what branch you are on, main or otherwise
+git checkout branchname	# switches git branches
+git pull origin branchname	#updates the branch with the repository for the branch
+
+#for someone else's repository, you don't have push rights, can fork repository and develop independently, can submit a pull request, slides show you how to set up a repository
+
+pbcopy < filename			#copies file contents onto clipboard to paste
+nano filename				#opens file in terminal, to change just delete, paste, ect. [control] x to exit, Y to save changes
+
+
+ 

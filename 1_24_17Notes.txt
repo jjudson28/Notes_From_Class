@@ -1,0 +1,56 @@
+Notes 1/24/17
+
+Kernel: the inside part of the computer
+interact using the shell
+echo $ Shell		#show your shell
+remember to specify the type of file you are creating
+
+
+program < inputfile > outputfile				#both of these commands are the same effectively
+cat inputfile | program > outputfile			#these are the most common input types, pipe the input file to the program
+mkdir		#make directory folder
+#making subfolders in data
+data/seqs		#creates subfolder in data called seqs
+cd ../..	#takes you two directories up
+
+SPACES IN FILENAMES ARE BAD!!! use quotation marks to get around this
+rm -rf deletes directory and all subfolders
+mkdir -p		#allows making subfolders within new directory, use brackets
+ls -R #shows all children files under directories
+touch #creates a file not a directory
+wildcards: ? matches a single character, * multiple characters matched after asterisk
+
+ls zmaysA* #allows list of all with matching characters
+ls zmays?_R1.fastq #just pulls up all that match with exception of no letter specified
+mv zmays[AB]_R1* R1	#allows the movement of files with either a or b into R1 directory
+mv zmays[AB]_R2* R2
+#can give the parentheses a range of letters, not numbers
+rm -rf tmp-data/aligned-reads * #will remove all files in the current directory
+^ #only match things at the beginning of the line
+-v #don't include any line that starts with the greater than symbol
+--color #print a different color on the screen
+-i #makes grep insensitive to case of letters
+^ within bracket #matches anything but this, gives non-dna letters within your file
+
+###January 26, 2017
+tee	#program that writes to intermediate file without disrupting the pipe
+& #run the program in the background, the process ID is very important
+jobs #tells you which programs you currently have running
+fg %processIDNo #brings process to the foreground so you can see the job in your terminal
+##DO NOT EXIT OUR OF YOUR TERMINAL APPLICATION WITH BACKGROUND PROCESSES!!!
+ps #process ids listed, can also use job id to call jobs
+nohup #can close application and still run it
+screen #a command used in R to continue running a process after closing terminal
+ctrl z #pauses program so that you can use bg to send to background
+echo $? #will give a zero for exit status if there were no errors in the programs run, can incorporate into pipe
+&& #telling pipe to continue if first program error status is 0
+|| #tells your program what to do if the first program gives an error status of 1
+ctrl a #takes you to beginning of code line
+grep -c #counting lines
+mkdir results-$(date +%F) #creates a folder entitled results with the current date
+#homebrew allows easy installation of dependencies of all different kinds of programs
+brew libsequence # accesses brew and installs the program
+.bash_profile #if you ls -a and find this file and open it, you can set up an alias for diff commands
+alias nuke='rm -f' #demo of an alias
+head -n #indicate number of lines you want
+tail n+2 #removes header, first two lines of file

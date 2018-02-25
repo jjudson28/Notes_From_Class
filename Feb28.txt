@@ -1,0 +1,67 @@
+Notes Feb 28:
+
+#ipython can run blocks of script
+#pythonw is good for opening other files, ect. in mac
+
+#can run python within unix by coding
+python filename
+
+#jupyter notebooks
+jupyter notebook #start a notebook in the terminal
+#can change the type of code to markdown, shift enter will enter the part in the notebook
+#need to be in the desired directory before opening jupyter
+
+
+ctrl-d #quits the python interpreter
+
+#in python, lists are like R vectors
+numbers = [1,2,3]
+numbers[0] #gives you the first number in the list
+
+#for loops don't require an explicit variable made before the loop, ex:
+for num in numbers:
+    print(num)  #must indent 4 spaces in a loop
+    
+#append numbers onto a list
+numbers.append(4) #appends the number 4 to the created numbers list from above
+
+#get help
+help(list) #gives all method options for commands to apply to list
+
+#method vs. command
+
+#once you create a tuple, CANNOT change the values inside a tuple
+
+
+March 2, 2017
+
+#R isn't as good with large datasets
+#citing code using sha and the link to the repository in code, cite in paper as well
+#pay attention to indentation!!
+#can change a tuple only by using a complete replace of the tuple
+
+type(my_tuple) #gives the type of whatever element is in the parentheses
+
+#dictionary uses curly brackets
+
+numbers[0] = 'zero' #appends the key for 0 into the dictionary numbers
+
+##can't use a list in a dictionary because not a hashable object
+
+if 4 not in numbers2:
+    numbers2[4] = 'four'	#can create a loop to make sure you don't overwrite an existing key
+numbers2
+
+items	#returns key and value of dictionary
+
+""" #can use to define long strings of text
+def #define function
+
+pip #way to fast install python packages
+import #like library function for R
+
+import numpy as np #can call packages by different terms to abbreviate
+
+surveys_df.dtypes #gives you types within the columns
+#object is string
+#float is a decimal
